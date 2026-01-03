@@ -13,7 +13,7 @@ export default function ProductDetailPage() {
   const [relatedProducts, setRelatedProducts] = useState([]); // ✅ client-only
   const [form, setForm] = useState({ name: "", mobile: "", message: "" });
   const [errors, setErrors] = useState({});
-  const ownerNumber = "919876543210";
+  const ownerNumber = "9950005552";
 
   // ❗ Generate random related products AFTER hydration
   useEffect(() => {

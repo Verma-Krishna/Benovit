@@ -13,11 +13,9 @@ import {
   FaPinterestP,
 } from "react-icons/fa";
 
-import {products} from "../products/data"
-
+import { products } from "../products/data";
 
 export default function Footer() {
-
   const faqs = [
     {
       question: "Are Benito Italy CNG Kits safe to use?",
@@ -37,72 +35,54 @@ export default function Footer() {
     {
       question: "How long does installation take?",
       answer:
-        "Installation usually takes one working day when performed by an authorized installer. Proper calibration and safety checks are completed before delivery.",
+        "Installation usually takes one working day when performed by an authorized installer.",
     },
     {
       question: "What maintenance is required for CNG kits?",
       answer:
-        "Routine maintenance includes filter replacement, leak inspection, ECU diagnostics, and general system checks to ensure long-term reliability.",
+        "Routine maintenance includes filter replacement, leak inspection, ECU diagnostics, and general system checks.",
     },
     {
       question: "Do Benito Italy CNG Kits come with warranty?",
       answer:
-        "Yes. All major components come with a manufacturer warranty. Warranty coverage may vary depending on the product model and installation by authorized dealers.",
+        "Yes. All major components come with a manufacturer warranty.",
     },
   ];
 
   const [activeIndex, setActiveIndex] = useState(null);
 
-
   return (
     <>
-
-      <section className="py-16 md:py-20 bg-linear-to-br from-blue-950 via-blue-900 to-blue-800 text-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
-
-          {/* Heading */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center text-transparent bg-clip-text bg-linear-to-r from-green-400 to-cyan-400">
+      {/* FAQ SECTION */}
+      <section className="py-16 bg-linear-to-br from-blue-950 via-blue-900 to-blue-800 text-white">
+        <div className="max-w-5xl mx-auto px-4">
+          <h2 className="text-3xl font-extrabold text-center bg-linear-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent">
             Frequently Asked Questions
           </h2>
 
-          <p className="text-center text-sm sm:text-base text-white/70 mt-2 sm:mt-3 mb-8 sm:mb-12">
-            Everything you need to know about Benito Italy CNG Kits
-          </p>
-
-          {/* FAQ ITEMS */}
-          <div className="space-y-4 sm:space-y-5">
+          <div className="mt-10 space-y-4">
             {faqs.map((faq, index) => {
               const isOpen = activeIndex === index;
-
               return (
                 <div
                   key={index}
-                  className="bg-white/5 border border-white/10 rounded-xl backdrop-blur-md overflow-hidden"
+                  className="bg-white/5 border border-white/10 rounded-xl"
                 >
-                  {/* Question */}
                   <button
                     onClick={() => setActiveIndex(isOpen ? null : index)}
-                    className="w-full flex justify-between items-start sm:items-center gap-3 px-4 sm:px-6 py-4 sm:py-6 text-left focus:outline-none"
+                    className="w-full flex justify-between px-6 py-4 text-left"
                   >
-                    <h3 className="text-sm sm:text-base md:text-lg font-semibold text-green-400 leading-snug">
+                    <h3 className="font-semibold text-green-400">
                       {faq.question}
                     </h3>
-
-                    <span className="text-base sm:text-xl flex-shrink-0 mt-0.5">
-                      {isOpen ? <FiMinus /> : <FiPlus />}
-                    </span>
+                    {isOpen ? <FiMinus /> : <FiPlus />}
                   </button>
 
-                  {/* Answer */}
                   <div
-                    className={`px-4 sm:px-6 transition-all duration-300 ease-in-out ${isOpen
-                      ? "max-h-48 pb-4 sm:pb-6 opacity-100"
-                      : "max-h-0 opacity-0"
+                    className={`px-6 transition-all duration-300 ${isOpen ? "max-h-40 pb-4 opacity-100" : "max-h-0 opacity-0"
                       } overflow-hidden`}
                   >
-                    <p className="text-xs sm:text-sm md:text-base text-white/80 leading-relaxed">
-                      {faq.answer}
-                    </p>
+                    <p className="text-sm text-white/80">{faq.answer}</p>
                   </div>
                 </div>
               );
@@ -111,48 +91,40 @@ export default function Footer() {
         </div>
       </section>
 
-      <footer className="text-white py-14 px-4 sm:px-6 md:px-12 lg:px-24 bg-linear-to-br from-[#0b2a47] via-[#0b3e58] to-[#008080]">
+      {/* FOOTER */}
+      <footer className="text-white py-8 px-6 bg-linear-to-br from-[#0b2a47] via-[#0b3e58] to-[#008080]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-
-          {/* COMPANY INFO */}
+          {/* COMPANY */}
           <div>
             <h2 className="text-2xl font-bold mb-4">
-              <Link href="/" className="text-[#00ffd0]">Benito</Link> Italy
+              <Link href="/" className="text-[#00ffd0]">
+                <img src="/benitologo.svg" className="h-16" alt="Benito Italy" />
+              </Link>
             </h2>
-            <p className="text-sm leading-relaxed text-gray-200">
-              Benito Italy offers premium CNG & LPG components designed for performance,
-              safety, and sustainability. Our advanced fuel systems help you drive
-              efficiently into the future.
+            <p className="text-sm text-gray-200">
+              Premium CNG & LPG components designed for performance, safety, and
+              sustainability.
             </p>
 
-            {/* SOCIAL ICONS */}
             <div className="flex gap-4 mt-5">
-              <a href="#" className="p-2 rounded-full bg-white/10 hover:bg-[#00ffd0] hover:text-black transition">
-                <FaInstagram />
-              </a>
-              <a href="#" className="p-2 rounded-full bg-white/10 hover:bg-[#00ffd0] hover:text-black transition">
-                <FaFacebookF />
-              </a>
-              <a href="#" className="p-2 rounded-full bg-white/10 hover:bg-[#00ffd0] hover:text-black transition">
-                <FaTwitter />
-              </a>
-              <a href="#" className="p-2 rounded-full bg-white/10 hover:bg-[#00ffd0] hover:text-black transition">
-                <FaPinterestP />
-              </a>
+              <FaInstagram className="cursor-pointer hover:text-[#00ffd0]" />
+              <FaFacebookF className="cursor-pointer hover:text-[#00ffd0]" />
+              <FaTwitter className="cursor-pointer hover:text-[#00ffd0]" />
+              <FaPinterestP className="cursor-pointer hover:text-[#00ffd0]" />
             </div>
           </div>
 
-          {/* PRODUCTS (FROM DATA) */}
+          {/* PRODUCTS */}
           <div>
             <h3 className="text-lg font-semibold mb-4 border-b border-[#00ffd0] pb-2 w-fit">
               Our Products
             </h3>
-            <ul className="space-y-2 text-gray-200 text-sm">
+            <ul className="space-y-2 text-sm text-gray-200">
               {products.slice(0, 7).map((product) => (
                 <li key={product.id}>
                   <Link
                     href={`/products/${product.slug}`}
-                    className="hover:text-[#00ffd0] transition"
+                    className="hover:text-[#00ffd0]"
                   >
                     {product.name}
                   </Link>
@@ -161,51 +133,72 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* WORKING HOURS */}
+          {/* HOURS */}
           <div>
             <h3 className="text-lg font-semibold mb-4 border-b border-[#00ffd0] pb-2 w-fit">
               Working Hours
             </h3>
-            <p className="flex items-center gap-2 text-sm text-gray-200">
+            <p className="flex items-center gap-2 text-sm">
               <FaClock className="text-[#00ffd0]" />
-              Mon – Sat: 10:00 AM – 7:00 PM
-            </p>
-            <p className="flex items-center gap-2 text-sm text-gray-200 mt-2">
-              <FaClock className="text-[#00ffd0]" />
-              Sunday: Closed
+              9:30 AM – 8:00 PM
             </p>
           </div>
 
-          {/* CONTACT INFO */}
+          {/* CONTACT (FIXED LINKS) */}
           <div>
             <h3 className="text-lg font-semibold mb-4 border-b border-[#00ffd0] pb-2 w-fit">
               Get in Touch
             </h3>
+
             <ul className="space-y-3 text-sm text-gray-200">
-              <li className="flex items-start gap-2">
+              <li className="flex gap-2">
                 <FaMapMarkerAlt className="text-[#00ffd0] mt-1" />
-                B 9/2, Samaypur Badli Industrial Area,<br />
-                Near Badli Metro Station,<br />
-                New Delhi – 110042, India
+                <span>
+                  Benito Italy, Meena Wala – Sirsi Rd,
+                  <br />
+                  Opp. RTEC Mall, Panchyawala,
+                  <br />
+                  Jaipur, Rajasthan – 302021
+                </span>
               </li>
+
               <li className="flex items-center gap-2">
                 <FaPhoneAlt className="text-[#00ffd0]" />
-                +91-9599735484 / +91-7982349621
+                <a href="tel:+919599735484" className="hover:text-[#00ffd0]">
+                  +91 9950005552
+                </a>
+                <br />
+                <a href="tel:+917982349621" className="hover:text-[#00ffd0]">
+                  +91 8058837913
+                </a>
               </li>
+
               <li className="flex items-center gap-2">
                 <FaEnvelope className="text-[#00ffd0]" />
-                info@benitoitaly.com
+                <a
+                  href="mailto:info@benitoitaly.com"
+                  className="hover:text-[#00ffd0]"
+                >
+                  benitoitalygas@gmail.com
+                </a>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* BOTTOM BAR */}
-        <div className="mt-12 border-t border-white/20 pt-6 text-center text-gray-300 text-xs sm:text-sm">
+        <div className="mt-12 border-t border-white/20 pt-6 text-center text-sm text-gray-300">
           © {new Date().getFullYear()} Benito Italy. All rights reserved.
+          <div className="mt-4 text-center text-xs text-gray-300">
+            Designed & Developed with ❤️ by{" "}
+            <span className="text-[#00ffd0] font-semibold">
+              Sulekha Technologies
+            </span>
+          </div>
         </div>
-      </footer>
 
+
+
+      </footer>
     </>
   );
 }

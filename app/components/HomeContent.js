@@ -9,6 +9,7 @@ import { Autoplay } from "swiper/modules";
 import { FaComments } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import Link from "next/link";
+import FeatureSection from "./FeatureSection";
 
 
 
@@ -34,14 +35,29 @@ export default function HomeContent() {
   ];
 
   const products = [
-    // Main Product 1
+
+    {
+      name: "CNG Sequential Conversion Kit",
+      image: "/products/picture/cngkit.avif",
+      slug: "cng-sequential-conversion-kit",
+    },
+    {
+      name: "CNG Cylinder",
+      image: "/products/picture/cngcylinder.avif",
+      slug: "cng-cylinder",
+    },
+
+    {
+      name: "LPG Pressure Reducer",
+      image: "/products/picture/LPG_Pressure_reducer.webp",
+      slug: "lpg-pressure-reducer",
+    },
     {
       name: "Injector Rail",
       image: "/products/picture/InjectorRail.webp",
       slug: "Injector-Rail",
     },
 
-    // Related of Product 1
     {
       name: "CNG/LPG Gauge",
       image: "/products/picture/CNG_Gauge.webp",
@@ -58,14 +74,12 @@ export default function HomeContent() {
       slug: "cng-pressure-reducer",
     },
 
-    // Main Product 2
     {
       name: "ECU",
       image: "/products/picture/ECU.webp",
       slug: "ecu",
     },
 
-    // Related of Product 2
     {
       name: "LPG Valve",
       image: "/products/picture/Lpgvalve.webp",
@@ -76,15 +90,12 @@ export default function HomeContent() {
       image: "/products/picture/Solenoidvalve.webp",
       slug: "solenoid-valve",
     },
-
-    // Main Product 3
     {
       name: "Steel Cube",
       image: "/products/picture/Steelcube.webp",
       slug: "steel-cube",
     },
 
-    // Related of Product 3
     {
       name: "Steel Pipe",
       image: "/products/picture/Steelcube2.webp",
@@ -94,7 +105,7 @@ export default function HomeContent() {
       name: "Electronic Cylinder Valve",
       image: "/products/picture/ElectronicCylindervalve.webp",
       slug: "electronic-cylinder-valve",
-    },
+    }
   ];
 
 
@@ -190,7 +201,7 @@ export default function HomeContent() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-10">
-            <Link href={"/contact"}  className="px-8 py-3 rounded-full text-lg font-semibold bg-white text-gray-900 shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300">
+            <Link href={"/contact"} className="px-8 py-3 rounded-full text-lg font-semibold bg-white text-gray-900 shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300">
               Get Started
             </Link>
             <Link href={"/products"} className="px-8 py-3 rounded-full text-lg font-semibold border border-gray-400 text-white bg-transparent hover:bg-linear-to-r hover:from-green-500 hover:to-cyan-500 hover:border-transparent transition-all duration-300">
@@ -316,6 +327,8 @@ export default function HomeContent() {
         </div>
       </section>
 
+      <FeatureSection />
+
 
       <section className="w-full py-16 bg-linear-to-br from-blue-900 via-blue-800 to-blue-950 text-white">
         <div className="max-w-4xl mx-auto p-8 bg-white/10 backdrop-blur-xl rounded-2xl shadow-2xl">
@@ -421,13 +434,13 @@ export default function HomeContent() {
         {helpOpen && (
           <div className="flex flex-col items-end gap-2 mb-2 transition-all">
             <Link
-              href={"tel:+911234567890"}
+              href="tel:9950005552"
               className="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-full shadow-lg backdrop-blur-md border border-white/20 transition-all duration-300"
             >
               📞 Call Us
             </Link>
             <Link
-              href={"https://wa.me/911234567890"}
+              href="https://wa.me/919950005552"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full shadow-lg transition-all duration-300"
